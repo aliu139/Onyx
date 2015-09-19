@@ -4,6 +4,7 @@
 
 #include "draw.h"
 #include "compass.h"
+#include "message.h"
 
 #define ARROW_MARGIN 20
 #define ARROW_IN 10
@@ -114,7 +115,7 @@ void canvas_update_proc(Layer *this_layer, GContext *ctx) {
   
   // Draw Text
   char str[10];
-  snprintf(str, sizeof(str), "%d", get_heading());
+  snprintf(str, sizeof(str), "%d", get_angle());
   
   GRect textBounds = GRect(0, 0, 60, 60);
   grect_align(&textBounds, &bounds, GAlignCenter, false);

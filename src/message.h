@@ -7,3 +7,5 @@
 void init_message();
 
 void deinit_message();
+
+int get_angle();
