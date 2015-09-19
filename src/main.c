@@ -41,13 +41,13 @@ static void init(void) {
 	});
 	window_stack_push(s_main_window, true);
 	init_compass();
-  init_message();
+	init_message();
 }
 
 // Destroy main Window
 static void deinit(void) {
 	deinit_compass();
-  deinit_message();
+	deinit_message();
 	window_destroy(s_main_window);
 }
 
