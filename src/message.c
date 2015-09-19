@@ -1,7 +1,9 @@
 #include <pebble.h>
-
+#include "notification.h"
+  
 #define ANGLE_DATA 0
 #define DISTANCE_DATA 1
+#define NOTIF_RESET 2
 
 static int directionAngle;
 static int distance;
@@ -22,6 +24,9 @@ static void inbox_received_callback(DictionaryIterator *iterator, void *context)
       case DISTANCE_DATA:
         distance = (int) t->value->int16;
         APP_LOG(APP_LOG_LEVEL_INFO, "DISTANCE received with value %d", (int) t->value->int16);
+      break;
+      case NOTIF_RESET:
+        reset_notification();
       break;
 		}
 
