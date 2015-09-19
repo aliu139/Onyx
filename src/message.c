@@ -15,14 +15,16 @@ static void inbox_received_callback(DictionaryIterator *iterator, void *context)
 	while (t != NULL) {
 		// Process this pair's key
 		switch (t->key) {
-      case ANGLE_DATA:
-        directionAngle = (int) t->value->int16;
-        APP_LOG(APP_LOG_LEVEL_INFO, "ANGLE received with value %d", (int) t->value->int16);
+		case ANGLE_DATA:
+			directionAngle = (int) t->value->int16;
+			APP_LOG(APP_LOG_LEVEL_INFO, "ANGLE received with value %d",
+					(int) t->value->int16);
 			break;
-      case DISTANCE_DATA:
-        distance = (int) t->value->int16;
-        APP_LOG(APP_LOG_LEVEL_INFO, "DISTANCE received with value %d", (int) t->value->int16);
-      break;
+		case DISTANCE_DATA:
+			distance = (int) t->value->int16;
+			APP_LOG(APP_LOG_LEVEL_INFO, "DISTANCE received with value %d",
+					(int) t->value->int16);
+			break;
 		}
 
 		// Get next pair, if any
@@ -65,5 +67,5 @@ int get_angle() {
 }
 
 int get_distance() {
-    return distance;
+	return distance;
 }
