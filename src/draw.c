@@ -5,6 +5,7 @@
 #include "draw.h"
 #include "compass.h"
 #include "message.h"
+#include "notification.h"
 
 #define ARROW_MARGIN 20
 #define ARROW_IN 10
@@ -124,6 +125,9 @@ void canvas_update_proc(Layer *this_layer, GContext *ctx) {
 	graphics_draw_text(ctx, str, fonts_get_system_font(FONT_KEY_GOTHIC_28),
 			textBounds, GTextOverflowModeTrailingEllipsis, GTextAlignmentCenter,
 			NULL);
+
+	//check if we should notify user about closeness
+	check_notification(get_distance());
 
 	redraw_timer = app_timer_register(50, mark_dirty, this_layer);
 }
