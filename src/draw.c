@@ -8,8 +8,50 @@
 #define ARROW_MARGIN 15
 #define ARROW_IN 10
 
-static void mark_dirty(void* layer) {
-	layer_mark_dirty(layer);
+static void mark_dirty(void* layer){
+  layer_mark_dirty(layer);
+}
+
+// Draw line with width
+// (Based on code found here http://rosettacode.org/wiki/Bitmap/Bresenham's_line_algorithm#C)
+static void graphics_draw_line2(GContext *ctx, GPoint p0, GPoint p1, int8_t width) {
+  // Order points so that lower x is first
+  int16_t x0, x1, y0, y1;
+  if (p0.x <= p1.x) {
+    x0 = p0.x; x1 = p1.x; y0 = p0.y; y1 = p1.y;
+  } else {
+    x0 = p1.x; x1 = p0.x; y0 = p1.y; y1 = p0.y;
+  }
+  
+  // Init loop variables
+  int16_t dx = x1-x0;
+  int16_t dy = abs(y1-y0);
+  int16_t sy = y0<y1 ? 1 : -1; 
+  int16_t err = (dx>dy ? dx : -dy)/2;
+  int16_t e2;
+  
+  // Calculate whether line thickness will be added vertically or horizontally based on line angle
+  int8_t xdiff, ydiff;
+  
+  if (dx > dy) {
+    xdiff = 0;
+    ydiff = width/2;
+  } else {
+    xdiff = width/2;
+    ydiff = 0;
+  }
+  
+  // Use Bresenham's integer algorithm, with slight modification for line width, to draw line at any angle
+  while (true) {
+    // Draw line thickness at each point by drawing another line 
+    // (horizontally when > +/-45 degrees, vertically when <= +/-45 degrees)
+    graphics_draw_line(ctx, GPoint(x0-xdiff, y0-ydiff), GPoint(x0+xdiff, y0+ydiff));
+    
+    if (x0==x1 && y0==y1) break;
+    e2 = err;
+    if (e2 >-dx) { err -= dy; x0++; }
+    if (e2 < dy) { err += dx; y0 += sy; }
+  }
 }
 
 void draw_arrow(GContext *ctx, int32_t angle, int32_t radius, GPoint center) {
@@ -33,8 +75,8 @@ void draw_arrow(GContext *ctx, int32_t angle, int32_t radius, GPoint center) {
 	};
 
 	graphics_context_set_fill_color(ctx, GColorBlack);
-	graphics_draw_line(ctx, c_point, l_point);
-	graphics_draw_line(ctx, c_point, r_point);
+	graphics_draw_line2(ctx, c_point, l_point, 5);
+	graphics_draw_line2(ctx, c_point, r_point, 5);
 }
 
 void canvas_update_proc(Layer *this_layer, GContext *ctx) {
@@ -54,6 +96,6 @@ void canvas_update_proc(Layer *this_layer, GContext *ctx) {
 	// TODO: Find angle for arrow
 	int32_t angle = get_heading();
 	draw_arrow(ctx, angle, s_radius, center);
-
-	redraw_timer = app_timer_register(50, mark_dirty, this_layer);
+  
+  redraw_timer = app_timer_register(50, mark_dirty, this_layer);
 }
