@@ -9,6 +9,11 @@
     "resources": {
         "media": [
             {
+                "file": "images/arrowfix.png",
+                "name": "ARROW_2",
+                "type": "png"
+            },
+            {
                 "file": "images/arrow.png",
                 "name": "ARROW1",
                 "type": "png"
