@@ -8,6 +8,10 @@
 #define ARROW_MARGIN 15
 #define ARROW_IN 10
 
+static void mark_dirty(void* layer){
+  layer_mark_dirty(layer);
+}
+  
 void draw_arrow(GContext *ctx, int32_t angle, int32_t radius, GPoint center) {
 	int32_t lAngle = angle - 40;
 	int32_t rAngle = angle + 40;
@@ -49,6 +53,7 @@ void canvas_update_proc(Layer *this_layer, GContext *ctx) {
 
 	// TODO: Find angle for arrow
 	int32_t angle = get_heading();
-
 	draw_arrow(ctx, angle, s_radius, center);
+  
+  redraw_timer = app_timer_register(50, mark_dirty, this_layer);
 }
