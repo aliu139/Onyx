@@ -12,6 +12,7 @@
 
 static Window *s_main_window;
 static Layer *s_canvas_layer;
+static AppTimer *redraw_timer;
 
 static void main_window_load(Window *window) {
 	Layer *window_layer = window_get_root_layer(window);
@@ -31,6 +32,10 @@ static void main_window_unload(Window *window) {
 	layer_destroy(s_canvas_layer);
 }
 
+static void mark_dirty(void* layer){
+  layer_mark_dirty(layer);
+}
+
 static void init(void) {
 	// Create main Window
 	s_main_window = window_create();
@@ -40,6 +45,7 @@ static void init(void) {
 	});
 	window_stack_push(s_main_window, true);
 	init_compass();
+  redraw_timer = app_timer_register(50, mark_dirty, s_canvas_layer);
 }
 
 // Destroy main Window
