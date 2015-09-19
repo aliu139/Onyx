@@ -9,6 +9,11 @@
     "resources": {
         "media": [
             {
+                "file": "images/path4138.png",
+                "name": "ARROW_4",
+                "type": "png"
+            },
+            {
                 "file": "images/arrowblackwhite.png",
                 "name": "ARROW_3",
                 "type": "png"
