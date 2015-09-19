@@ -7,20 +7,10 @@
     "longName": "Onyx",
     "projectType": "native",
     "resources": {
-        "media": [
-            {
-                "file": "images/arrowfix.png",
-                "name": "ARROW_TRANSPARENT",
-                "type": "png-trans"
-            }
-        ]
+        "media": []
     },
     "sdkVersion": "3",
     "shortName": "Onyx",
-    "targetPlatforms": [
-        "aplite",
-        "basalt"
-    ],
     "uuid": "4d943355-7f44-4cf4-92cc-532334a19250",
     "versionLabel": "1.0",
     "watchapp": {
