@@ -116,7 +116,7 @@ void canvas_update_proc(Layer *this_layer, GContext *ctx) {
 
 	// Draw Text
 	char str[20];
-	snprintf(str, sizeof(str), "H: %d\nD: %d", get_heading(), get_distance());
+	snprintf(str, sizeof(str), "Dist:\n%d", get_heading(), get_distance());
 
 	GRect textBounds = GRect(0, 0, 60, 60);
 	grect_align(&textBounds, &bounds, GAlignCenter, false);
