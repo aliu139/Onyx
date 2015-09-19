@@ -15,7 +15,9 @@ void reset_notification() {
 }
 
 void check_notification(int distance) {
-	if (notified == 0 && distance < NOTIFY_DISTANCE) {
+	if(distance < 0){
+		return;
+	} else if (notified == 0 && distance < NOTIFY_DISTANCE) {
 		notified = 1;
 		vibes_double_pulse();
 		light_enable_interaction();
