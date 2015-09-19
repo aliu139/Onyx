@@ -1,0 +1,19 @@
+{
+    "appKeys": {},
+    "capabilities": [
+        ""
+    ],
+    "companyName": "tt395@cornell.edu",
+    "longName": "Hello-pebble",
+    "projectType": "native",
+    "resources": {
+        "media": []
+    },
+    "sdkVersion": "3",
+    "shortName": "Hello-pebble",
+    "uuid": "09ca2149-12dc-49d6-b866-6ede13a974cf",
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": false
+    }
+}
