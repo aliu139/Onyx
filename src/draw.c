@@ -116,11 +116,17 @@ void canvas_update_proc(Layer *this_layer, GContext *ctx) {
 
 	// Draw Text
 	char str[20];
-	if(get_distance() < 0){
-		snprintf(str, sizeof(str), "Dist:\nFar...");
-	} else {
-		snprintf(str, sizeof(str), "Dist:\n%d", get_distance());
-	}
+  CompassHeadingData data = get_compass_data();
+  if(data.compass_status == CompassStatusDataInvalid){
+    snprintf(str, sizeof(str), "Calib\nrating");
+  }
+  else{
+	  if(get_distance() < 0){
+		  snprintf(str, sizeof(str), "Dist:\n2 Far");
+	  } else {
+		  snprintf(str, sizeof(str), "Dist:\n%d", get_distance());
+	  }
+  }
 
 	GRect textBounds = GRect(0, 0, 60, 60);
 	grect_align(&textBounds, &bounds, GAlignCenter, false);

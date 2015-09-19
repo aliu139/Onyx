@@ -3,9 +3,11 @@
  */
 #include "compass.h"
 static int compass_heading;
+static CompassHeadingData compassData;
 
 static void compass_heading_handler(CompassHeadingData heading_data) {
 	compass_heading = TRIGANGLE_TO_DEG(heading_data.magnetic_heading);
+  compassData = heading_data;
 }
 
 int get_heading() {
