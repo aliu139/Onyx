@@ -5,7 +5,7 @@
 #include "draw.h"
 #include "compass.h"
 
-#define ARROW_MARGIN 15
+#define ARROW_MARGIN 20
 #define ARROW_IN 10
 
 static void mark_dirty(void* layer){
