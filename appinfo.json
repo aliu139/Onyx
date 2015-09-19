@@ -9,6 +9,11 @@
     "resources": {
         "media": [
             {
+                "file": "images/arrowfix.png",
+                "name": "ARROW_2",
+                "type": "png"
+            },
+            {
                 "file": "images/path4138.png",
                 "name": "ARROW_4",
                 "type": "png"
@@ -16,11 +21,6 @@
             {
                 "file": "images/arrowblackwhite.png",
                 "name": "ARROW_3",
-                "type": "png"
-            },
-            {
-                "file": "images/arrowfix.png",
-                "name": "ARROW_2",
                 "type": "png"
             },
             {

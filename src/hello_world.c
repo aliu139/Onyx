@@ -8,8 +8,8 @@ static BitmapLayer *s_bitmap_layer;
 
 void handle_init(void) {
   //GBitmap for the Arrow
-  s_example_bitmap = gbitmap_create_with_resource(RESOURCE_ID_ARROW1);
-  s_bitmap_layer = bitmap_layer_create(GRect(5, 5, 48, 48));
+  s_example_bitmap = gbitmap_create_with_resource(RESOURCE_ID_ARROW_4);
+  s_bitmap_layer = bitmap_layer_create(GRect(5, 5, 130, 130));
   bitmap_layer_set_bitmap(s_bitmap_layer, s_example_bitmap);
   
 	// Create a window and text layer
