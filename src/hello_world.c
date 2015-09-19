@@ -5,6 +5,7 @@ TextLayer *text_layer;
 
 static GBitmap *s_example_bitmap;
 static BitmapLayer *s_bitmap_layer;
+static GContext *background_test;
 
 void handle_init(void) {
   //GBitmap for the Arrow

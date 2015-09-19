@@ -10,23 +10,8 @@
         "media": [
             {
                 "file": "images/arrowfix.png",
-                "name": "ARROW_2",
-                "type": "png"
-            },
-            {
-                "file": "images/path4138.png",
-                "name": "ARROW_4",
-                "type": "png"
-            },
-            {
-                "file": "images/arrowblackwhite.png",
-                "name": "ARROW_3",
-                "type": "png"
-            },
-            {
-                "file": "images/arrow.png",
-                "name": "ARROW1",
-                "type": "png"
+                "name": "ARROW_TRANSPARENT",
+                "type": "png-trans"
             }
         ]
     },
