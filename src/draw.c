@@ -4,6 +4,7 @@
 
 #include "draw.h"
 #include "compass.h"
+#include "message.h"
 
 #define ARROW_MARGIN 20
 #define ARROW_IN 10
@@ -109,12 +110,12 @@ void canvas_update_proc(Layer *this_layer, GContext *ctx) {
 	graphics_fill_circle(ctx, center, s_radius - 5);
 
 	// TODO: Find angle for arrow
-	int32_t angle = get_heading();
+	int angle = get_heading() + get_angle();
 	draw_arrow(ctx, angle, s_radius, center);
   
   // Draw Text
-  char str[10];
-  snprintf(str, sizeof(str), "%d", get_heading());
+  char str[20];
+  snprintf(str, sizeof(str), "H: %d\nA: %d", get_heading(), get_angle());
   
   GRect textBounds = GRect(0, 0, 60, 60);
   grect_align(&textBounds, &bounds, GAlignCenter, false);
