@@ -9,14 +9,13 @@ static BitmapLayer *s_bitmap_layer;
 void handle_init(void) {
   //GBitmap for the Arrow
   s_example_bitmap = gbitmap_create_with_resource(RESOURCE_ID_ARROW_TRANSPARENT_BLACK);
-  s_bitmap_layer = bitmap_layer_create(GRect(2, 7, 137, 142));
+  s_bitmap_layer = bitmap_layer_create(GRect(2, 10, 137, 145));
   
   bitmap_layer_set_bitmap(s_bitmap_layer, s_example_bitmap);
   
-  
 	// Create a window and text layer
 	window = window_create();
-	text_layer = text_layer_create(GRect(0, 0, 160, 160));
+	text_layer = text_layer_create(GRect(0, 0, 144, 168));
 	
 	// Set the text, font, and text alignment
 	//text_layer_set_text(text_layer, "Hi, I'm a Pebble!");
