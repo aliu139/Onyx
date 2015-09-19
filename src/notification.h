@@ -4,3 +4,4 @@
 #pragma once
 #include <pebble.h>
 
+void reset_notification();
