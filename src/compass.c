@@ -14,6 +14,10 @@ int get_heading() {
 	return compass_heading;
 }
 
+CompassHeadingData get_compass_data(){
+  return compassData;
+}
+
 void init_compass() {
 	compass_service_set_heading_filter(2 * (TRIG_MAX_ANGLE / 360));
 	compass_service_subscribe(&compass_heading_handler);
