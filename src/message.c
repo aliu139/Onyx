@@ -1,8 +1,10 @@
 #include <pebble.h>
 
 #define ANGLE_DATA 0
+#define DISTANCE_DATA 1
 
 static int directionAngle;
+static int distance;
 
 static void inbox_received_callback(DictionaryIterator *iterator, void *context) {
 	APP_LOG(APP_LOG_LEVEL_INFO, "Message received!");
@@ -15,9 +17,14 @@ static void inbox_received_callback(DictionaryIterator *iterator, void *context)
 		switch (t->key) {
 		case ANGLE_DATA:
 			directionAngle = (int) t->value->int16;
-			APP_LOG(APP_LOG_LEVEL_INFO, "KEY_DATA received with value %d",
+			APP_LOG(APP_LOG_LEVEL_INFO, "ANGLE received with value %d",
 					(int) t->value->int16);
 			break;
+        case DISTANCE_DATA:
+            distance = (int) t->value->int16;
+            APP_LOG(APP_LOG_LEVEL_INFO, "DISTANCE received with value %d",
+                        (int) t->value->int16);
+            break;
 		}
 
 		// Get next pair, if any
@@ -57,4 +64,8 @@ void deinit_message() {
 
 int get_angle() {
 	return directionAngle;
+}
+
+int get_distance() {
+    return
 }
