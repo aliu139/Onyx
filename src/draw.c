@@ -111,9 +111,11 @@ void canvas_update_proc(Layer *this_layer, GContext *ctx) {
 	// TODO: Find angle for arrow
 	int32_t angle = get_heading();
 	draw_arrow(ctx, angle, s_radius, center);
+  
+  // Draw Text
   char str[10];
   snprintf(str, sizeof(str), "%d", get_heading());
-  // Draw Text
+  graphics_context_set_text_color(ctx, GColorBlack);
   graphics_draw_text(ctx, str, fonts_get_system_font(FONT_KEY_BITHAM_30_BLACK)
                      , bounds, GTextOverflowModeTrailingEllipsis
                      , GTextAlignmentCenter, NULL);
