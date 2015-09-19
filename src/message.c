@@ -53,6 +53,6 @@ void deinit_message() {
   
 }
 
-int get_angle {
+int get_angle() {
     return directionAngle;
 }
