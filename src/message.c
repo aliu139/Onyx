@@ -37,7 +37,7 @@ static void outbox_sent_callback(DictionaryIterator *iterator, void *context) {
   APP_LOG(APP_LOG_LEVEL_INFO, "Outbox send success!");
 }
 
-static void init_message {
+void init_message() {
     
     // Register callbacks
     app_message_register_inbox_received(inbox_received_callback);
@@ -48,3 +48,7 @@ static void init_message {
     // Open AppMessage
     app_message_open(app_message_inbox_size_maximum(), app_message_outbox_size_maximum());
 }
+
+void deinit_message() {
+  
+} 
