@@ -5,6 +5,8 @@
 
 #include <pebble.h>
 #include "draw.h"
+#include "compass.h"
+
 #define ARROW_MARGIN 15
 #define ARROW_IN 10
 
@@ -37,10 +39,12 @@ static void init(void) {
 		.unload = main_window_unload,
 	});
 	window_stack_push(s_main_window, true);
+	init_compass();
 }
 
+// Destroy main Window
 static void deinit(void) {
-	// Destroy main Window
+	deinit_compass();
 	window_destroy(s_main_window);
 }
 

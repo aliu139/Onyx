@@ -2,6 +2,7 @@
  * draw.h
  * In charge of drawing
  */
+
 #pragma once
 #include <pebble.h>
 

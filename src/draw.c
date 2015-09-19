@@ -3,6 +3,7 @@
  */
 
 #include "draw.h"
+#include "compass.h"
 
 #define ARROW_MARGIN 15
 #define ARROW_IN 10
@@ -47,7 +48,7 @@ void canvas_update_proc(Layer *this_layer, GContext *ctx) {
 	graphics_fill_circle(ctx, center, s_radius - 5);
 
 	// TODO: Find angle for arrow
-	int32_t angle = 0;
+	int32_t angle = get_heading();
 
 	draw_arrow(ctx, angle, s_radius, center);
 }
