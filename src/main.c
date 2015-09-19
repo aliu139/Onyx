@@ -40,6 +40,7 @@ static void init(void) {
 	});
 	window_stack_push(s_main_window, true);
 	init_compass();
+    init_message();
 }
 
 // Destroy main Window

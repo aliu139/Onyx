@@ -37,7 +37,7 @@ static void outbox_sent_callback(DictionaryIterator *iterator, void *context) {
   APP_LOG(APP_LOG_LEVEL_INFO, "Outbox send success!");
 }
 
-static void message_init {
+static void init_message {
     
     // Register callbacks
     app_message_register_inbox_received(inbox_received_callback);
