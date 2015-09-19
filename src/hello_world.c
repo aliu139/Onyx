@@ -3,7 +3,15 @@
 Window *window;
 TextLayer *text_layer;
 
+static GBitmap *s_example_bitmap;
+static BitmapLayer *s_bitmap_layer;
+
 void handle_init(void) {
+  //GBitmap for the Arrow
+  s_example_bitmap = gbitmap_create_with_resource(RESOURCE_ID_ARROW1);
+  s_bitmap_layer = bitmap_layer_create(GRect(5, 5, 48, 48));
+  bitmap_layer_set_bitmap(s_bitmap_layer, s_example_bitmap);
+  
 	// Create a window and text layer
 	window = window_create();
 	text_layer = text_layer_create(GRect(0, 0, 144, 154));
@@ -16,6 +24,10 @@ void handle_init(void) {
 	// Add the text layer to the window
 	layer_add_child(window_get_root_layer(window), text_layer_get_layer(text_layer));
 
+  // Add arrow image
+  layer_add_child(window_get_root_layer(window), bitmap_layer_get_layer(s_bitmap_layer));
+
+  
 	// Push the window
 	window_stack_push(window, true);
 	
@@ -24,7 +36,11 @@ void handle_init(void) {
 }
 
 void handle_deinit(void) {
-	// Destroy the text layer
+  // Destroy image
+  gbitmap_destroy(s_example_bitmap);
+  bitmap_layer_destroy(s_bitmap_layer);
+
+  // Destroy the text layer
 	text_layer_destroy(text_layer);
 	
 	// Destroy the window
