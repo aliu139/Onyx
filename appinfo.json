@@ -3,15 +3,15 @@
     "capabilities": [
         ""
     ],
-    "companyName": "tt395@cornell.edu",
-    "longName": "Hello-pebble",
+    "companyName": "ml927@cornell.edu",
+    "longName": "Onyx",
     "projectType": "native",
     "resources": {
         "media": []
     },
     "sdkVersion": "3",
-    "shortName": "Hello-pebble",
-    "uuid": "09ca2149-12dc-49d6-b866-6ede13a974cf",
+    "shortName": "Onyx",
+    "uuid": "4d943355-7f44-4cf4-92cc-532334a19250",
     "versionLabel": "1.0",
     "watchapp": {
         "watchface": false
