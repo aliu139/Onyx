@@ -1,5 +1,5 @@
 # Onyx
-by [Charlie Chan](https://github.com/charleycyx), [Matthew Li](https://github.com/MattLi96), [Tyler Thompson](https://github.com/ThompsonTyler), and [Austin Liu](https://github.com/aliu139)
+by [Charley Chan](https://github.com/charleycyx), [Matthew Li](https://github.com/MattLi96), [Tyler Thompson](https://github.com/ThompsonTyler), and [Austin Liu](https://github.com/aliu139)
 
 ## Overview
 2014 was the year of the smartwatch. Within the couse of a single year, we saw a variety of smartwatches, all produced from different companies with different capabilities. As expected, each new watch attempted to outdo the last, with a host of new features and specifications trying to make the most of the smart-wearables field. Yet, out of the myriad of watches released and the countless applications produced, none of them allowed for simple navigation. Not a single app could tell us what direction we should proceed in in order to get to our final destination. That is where Onyx comes in.
