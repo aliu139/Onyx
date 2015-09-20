@@ -3,6 +3,9 @@ by [Charlie Chan](https://github.com/charleycyx), [Matthew Li](https://github.co
 
 ## Overview
 
+## Related Repositories:
+[Onyx-Backend](https://github.com/aliu139/onyx-backend)
+[Onyx-Frontend](https://github.com/charleycyx/OnYxIOS)
 
 ## Technologies Used
 * Priceline API
