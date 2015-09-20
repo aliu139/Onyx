@@ -7,7 +7,8 @@
 #include "draw.h"
 #include "compass.h"
 #include "message.h"
-
+#include "click.h"
+  
 #define ARROW_MARGIN 15
 #define ARROW_IN 10
 
@@ -40,7 +41,9 @@ static void init(void) {
 		.unload = main_window_unload,
 	});
 	window_stack_push(s_main_window, true);
-	init_compass();
+  window_set_click_config_provider(s_main_window, (ClickConfigProvider) click_config);
+	
+  init_compass();
 	init_message();
 }
 
